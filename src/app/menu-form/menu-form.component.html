@@ -1,0 +1,69 @@
+
+<body>
+
+<form >
+    <h1>Tambah Dan Edit Masakkan</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Nama Masakkan</mat-label>
+      <input
+        matInput
+        placeholder="Nama Masakkan"
+        name="menuName"
+        id="menuName"
+        [(ngModel)]="menu.menuName"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Deskripsi Masakkan</mat-label>
+      <input
+        matInput
+        placeholder="Cerita/Bahan tentang Masakkan ini"
+        name="menuDesc"
+        id="menuDesc"
+        [(ngModel)]="menu.menuDesc"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="outline">
+      <mat-label>Durasi Masak</mat-label>
+      <input
+        matInput
+        placeholder="Estimasi Waktu Masak"
+        name="duration"
+        id="duration"
+        [(ngModel)]="menu.duration"
+      />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="outline">
+        <mat-label>Harga</mat-label>
+        <input
+          matInput
+          placeholder="Harga Masakkan"
+          name="price"
+          id="price"
+          [(ngModel)]="menu.price"
+        />
+      </mat-form-field>
+      <br/>
+
+  
+    <div class="buttons">
+      <div *ngIf="update">
+        <button mat-raised-button color="warn" (click)="deleteMenu()">
+          delete
+        </button>
+        <button mat-raised-button color="primary" (click)="updateMenu()">
+          update
+        </button>
+      </div>
+      <div *ngIf="!update">
+        <button mat-raised-button (click)="postMenu()" color="primary">
+          post
+        </button>
+      </div>
+    </div>
+  </form>
+</body>
